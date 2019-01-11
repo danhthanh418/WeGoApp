@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, Alert, ScrollView} from 'react-native';
 import {Card, Button, Icon,Header} from 'react-native-elements';
-import Awesome from 'react-native-vector-icons/FontAwesome';
+import { SearchBar } from 'react-native-elements'
 
 import TourData from '../data/data.json';
 
@@ -40,8 +40,14 @@ export default class Tour extends Component {
                 containerStyle={{height:80, top:-30}}
                 placement="center"
                 leftComponent={{ icon: 'menu', color: '#fff',text: 'Tour', style: { color: '#fff',fontWeight:'bold' }}}
-                centerComponent={{}}
-                rightComponent={{ icon: 'menu', color: '#fff' }}>
+                centerComponent={<SearchBar
+  showLoading= {false}
+  platform="android"
+  placeholder='Tìm kiếm'
+  clearIcon = {<Icon  type= 'font-awesome' name='times-circle' color='grey' style={{fontSize:16}}></Icon>}
+  onCl
+  />}
+                rightComponent={{}}>
             </Header>
             <ScrollView style={{flex:1}}>
                 {this.renderdata}

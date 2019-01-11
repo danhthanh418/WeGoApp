@@ -5,7 +5,7 @@ import Awesome from 'react-native-vector-icons/FontAwesome';
 
 import TourData from '../data/data.json';
 
-export default class Home extends Component {
+export default class Tour extends Component {
   renderdata = TourData.map ((t, i) => {
     return (
       <Card image={{uri: t.img}} style={{marginBottom: 20, flex: 1}} key={i}>
@@ -39,9 +39,9 @@ export default class Home extends Component {
             <Header 
                 containerStyle={{height:80, top:-30}}
                 placement="center"
-                leftComponent={{ icon: 'menu', color: '#fff' }}
-                centerComponent={{ text: 'Home', style: { color: '#fff',fontWeight:'bold' } }}
-                rightComponent={{ icon: 'search', color: '#fff' }}>
+                leftComponent={{ icon: 'menu', color: '#fff',text: 'Tour', style: { color: '#fff',fontWeight:'bold' }  }}
+                centerComponent={{}}
+                rightComponent={{ icon: 'menu', color: '#fff' }}>
             </Header>
             <ScrollView style={{flex:1}}>
                 {this.renderdata}

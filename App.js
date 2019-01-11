@@ -8,7 +8,6 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,ScrollView} from 'react-native';
-import Home from './src/components/Home';
 import BottomNav from './src/navigation/BottomNav';
 
 

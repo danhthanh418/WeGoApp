@@ -1,38 +1,35 @@
 import React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo'
 import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
-import Home from '../components/Home';
-import Settings from '../components/Settings';
-import Search from '../components/Search';
-import Detail from '../components/Detail';
+import Tour from '../components/Tour';
+import CamNang from '../components/CamNang';
+import GioiThieu from '../components/GioiThieu';
+
 
 const TabNavigator = createBottomTabNavigator ({
-  Home: Home,
-  Search:Search,
-  Detail:Detail,
-  Settings: Settings,
+  Tour: Tour,
+  CamNang:CamNang,
+  GioiThieu: GioiThieu,
 },
 {
     defaultNavigationOptions: ({ navigation }) => ({
         tabBarIcon: ({ focused, horizontal, tintColor }) => {
             const { routeName } = navigation.state;
             let iconName;
-            if (routeName === 'Home') {
-                iconName = `ios-home`;
-            } else if (routeName === 'Settings') {
-                iconName = `ios-settings`;
-            } else if (routeName === 'Search') {
-                iconName = `ios-search`;
+            if (routeName === 'Tour') {
+                iconName = `paper-plane`;
+            } else if (routeName === 'CamNang') {
+                iconName = `attachment`;
             } else {
-                iconName = `ios-information-circle`
+                iconName = `info-with-circle`
             }
             // You can return any component that you like here! We usually use an
             // icon component from react-native-vector-icons
-            return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />;
+            return <Entypo name={iconName} size={horizontal ? 20 : 25} color={tintColor} />;
         },
     }),
     tabBarOptions: {
-        activeTintColor: 'tomato',
+        activeTintColor: 'orange',
         inactiveTintColor: 'gray',
     },
 }

@@ -13,6 +13,7 @@ import BottomNav from './src/navigation/BottomNav';
 
 export default class App extends Component{
   render() {
+    console.disableYellowBox = true;
     return (
       <BottomNav></BottomNav>
       )

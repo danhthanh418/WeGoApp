@@ -24,7 +24,7 @@ export default class Tour extends Component {
             marginRight: 0,
             marginBottom: 0,
           }}
-          title="GET NOW"
+          title="Xem chi tiết"
           onPress={() => {
             Alert.alert ('Thông báo', JSON.stringify (t.name));
           }}
@@ -39,8 +39,8 @@ export default class Tour extends Component {
             <Header 
                 containerStyle={{height:80, top:-30}}
                 placement="center"
-                leftComponent={{ icon: 'menu', color: '#fff',text: 'Tour', style: { color: '#fff',fontWeight:'bold' }  }}
-                centerComponent={{}}
+                leftComponent={{ icon: 'menu', color: '#fff' }}
+                centerComponent={{ text: 'Tour', style: { color: '#fff',fontWeight:'bold' } }}
                 rightComponent={{ icon: 'menu', color: '#fff' }}>
             </Header>
             <ScrollView style={{flex:1}}>

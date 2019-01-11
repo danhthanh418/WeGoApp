@@ -39,8 +39,8 @@ export default class Tour extends Component {
             <Header 
                 containerStyle={{height:80, top:-30}}
                 placement="center"
-                leftComponent={{ icon: 'menu', color: '#fff' }}
-                centerComponent={{ text: 'Tour', style: { color: '#fff',fontWeight:'bold' } }}
+                leftComponent={{ icon: 'menu', color: '#fff',text: 'Tour', style: { color: '#fff',fontWeight:'bold'  }}
+                centerComponent={{} }}
                 rightComponent={{ icon: 'menu', color: '#fff' }}>
             </Header>
             <ScrollView style={{flex:1}}>

@@ -5,6 +5,7 @@ import Tour from '../components/Tour';
 import CamNang from '../components/CamNang';
 import GioiThieu from '../components/GioiThieu';
 import ChiTietTour from '../components/ChiTietTour';
+import Test from '../components/Test';
 
 
 const TabNavigator = createBottomTabNavigator ({
@@ -12,6 +13,7 @@ const TabNavigator = createBottomTabNavigator ({
   CamNang:CamNang,
   GioiThieu: GioiThieu,
 //   ChiTiet:ChiTietTour
+  Test:Test
 },
 {
     defaultNavigationOptions: ({ navigation }) => ({

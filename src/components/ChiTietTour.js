@@ -5,7 +5,7 @@ export default class ChiTietTour extends Component {
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+       
       </View>
     )
   }

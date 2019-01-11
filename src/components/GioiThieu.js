@@ -5,7 +5,7 @@ export default class GioiThieu extends Component {
   render () {
     return (
        <View style={{marginBottom:20, paddingBottom:10}}>
-        <Header containerStyle={{ height: 80, top: -30 }} placement="center" leftComponent={{ icon: 'menu', color: '#fff',text: 'Giới thiệu', style: { color: '#fff', fontWeight: 'bold' } }} centerComponent={{ }} rightComponent={{ icon: 'menu', color: '#fff' }} />
+        <Header containerStyle={{ height: 80, top: -30 }} placement="center" leftComponent={{ icon: 'menu', color: '#fff'}} centerComponent={{text: 'Giới thiệu', style: { color: '#fff', fontWeight: 'bold' } }} rightComponent={{}} />
         <ScrollView>
           <View style={{marginTop:0}}>
             <Text style={styles.topHeader}> Giới thiệu về chúng tôi </Text>

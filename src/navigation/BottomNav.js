@@ -4,12 +4,14 @@ import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
 import Tour from '../components/Tour';
 import CamNang from '../components/CamNang';
 import GioiThieu from '../components/GioiThieu';
+import ChiTietTour from '../components/ChiTietTour';
 
 
 const TabNavigator = createBottomTabNavigator ({
   Tour: Tour,
   CamNang:CamNang,
   GioiThieu: GioiThieu,
+//   ChiTiet:ChiTietTour
 },
 {
     defaultNavigationOptions: ({ navigation }) => ({

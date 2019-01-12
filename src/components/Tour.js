@@ -27,68 +27,69 @@ export default class Tour extends Component {
 
   renderdata = TourData.map ((t, i) => {
     return (
-      <Card image={{uri: t.img}} style={{marginBottom: 20, flex: 1}} key={i}>
-        <Text
-          style={{
-            marginBottom: 10,
-            fontWeight: 'bold',
-            color: '#003c71',
-            fontSize: 20,
-          }}
-        >
-          {t.name}
-        </Text>
-        <View
-          style={{flex: 1, justifyContent: 'flex-start', flexDirection: 'row'}}
-        >
-          <Icon
-            type="font-awesome"
-            name="clock-o"
-            color="grey"
-            style={{flex: 1}}
-          />
-          <Text style={{flex: 8, paddingLeft: 5}}>{t.time}</Text>
-        </View>
-        <Text style={{marginBottom: 10}}>
-          {t.doc}
-        </Text>
-        <View
-          style={{flex: 1, justifyContent: 'flex-start', flexDirection: 'row'}}
-        >
+      <TouchableOpacity onPress = {this._toggleModal}>
+        <Card image={{ uri: t.img }} style={{ marginBottom: 20, flex: 1 }} key={i}>
           <Text
-            style={{flex: 2, color: 'orange', fontSize: 20, fontWeight: 'bold'}}
-          >
-            {`${t.price} VND`}{' '}
-          </Text>
-          <View
             style={{
-              justifyContent: 'flex-end',
-              paddingLeft: 5,
-              flexDirection: 'row',
-              flexWrap: 'wrap',
+              marginBottom: 10,
+              fontWeight: 'bold',
+              color: '#003c71',
+              fontSize: 20,
             }}
           >
+            {t.name}
+          </Text>
+          <View
+            style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }}
+          >
             <Icon
               type="font-awesome"
-              name="plane"
+              name="clock-o"
               color="grey"
-              style={{flex: 1}}
+              style={{ flex: 1 }}
             />
-            <Icon
-              type="font-awesome"
-              name="train"
-              color="grey"
-              style={{flex: 1}}
-            />
-            <Icon
-              type="ionicon"
-              name="ios-boat"
-              color="grey"
-              style={{flex: 1}}
-            />
+            <Text style={{ flex: 8, paddingLeft: 5 }}>{t.time}</Text>
           </View>
-        </View>
-        <Button
+          <Text style={{ marginBottom: 10 }}>
+            {t.doc}
+          </Text>
+          <View
+            style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }}
+          >
+            <Text
+              style={{ flex: 2, color: '#00c1de', fontSize: 20, fontWeight: 'bold' }}
+            >
+              {`${t.price} VND`}{' '}
+            </Text>
+            <View
+              style={{
+                justifyContent: 'flex-end',
+                paddingLeft: 5,
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+              }}
+            >
+              <Icon
+                type="font-awesome"
+                name="plane"
+                color="grey"
+                style={{ flex: 1 }}
+              />
+              <Icon
+                type="font-awesome"
+                name="train"
+                color="grey"
+                style={{ flex: 1 }}
+              />
+              <Icon
+                type="ionicon"
+                name="ios-boat"
+                color="grey"
+                style={{ flex: 1 }}
+              />
+            </View>
+          </View>
+          {/* <Button
           icon={<Icon name="check" color="#ffffff" />}
           backgroundColor="#03A9F4"
           buttonStyle={{
@@ -98,27 +99,29 @@ export default class Tour extends Component {
             marginBottom: 0,
           }}
           title="Xem chi tiết"
-          onPress={this._toggleModal}
-        />
-      </Card>
+        /> */}
+        </Card>
+      </TouchableOpacity>
     );
   });
 
   renderCarosel({item, index}) {
     return (
-      <Card image={{uri: item.img}}>
-        <Text
-          style={{
-            marginBottom: 10,
-            fontWeight: 'bold',
-            color: '#003c71',
-            fontSize: 20,
-            fontStyle: 'italic',
-          }}
-        >
-          {item.name}
-        </Text>
-      </Card>
+      <TouchableOpacity onPress={this._toggleModal}>
+        <Card image={{ uri: item.img }}>
+          <Text
+            style={{
+              marginBottom: 10,
+              fontWeight: 'bold',
+              color: '#003c71',
+              fontSize: 20,
+              fontStyle: 'italic',
+            }}
+          >
+            {item.name}
+          </Text>
+        </Card>
+      </TouchableOpacity>
     );
   }
   render () {

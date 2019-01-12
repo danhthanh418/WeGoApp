@@ -13,7 +13,7 @@ const TabNavigator = createBottomTabNavigator ({
   CamNang:CamNang,
   GioiThieu: GioiThieu,
 //   ChiTiet:ChiTietTour
-  Test:Test
+//  Test:Test
 },
 {
     defaultNavigationOptions: ({ navigation }) => ({

@@ -1,47 +1,71 @@
-import React, {Component} from 'react'
-import {StyleSheet,Dimensions,View,Text}  from 'react-native'
-import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
-import {Header} from 'react-native-elements'
-
-const FirstRoute = () => (
-    <View style={[styles.scene, { backgroundColor: '#ff4081' }]} />
-);
-const SecondRoute = () => (
-    <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
-);
-const ThirdRoute = () => (
-  <View style={[styles.scene, {backgroundColor: 'red'}]} />
-);
+import React, {Component} from 'react';
+import {StyleSheet, Dimensions, View, Text} from 'react-native';
+import {
+  IndicatorViewPager,
+  PagerTitleIndicator,
+} from 'rn-viewpager';
+import TourData from '../data/data.json';
+import {ListItem} from 'react-native-elements'
 
 export default class Test extends React.Component {
-    state = {
-        index: 0,
-        routes: [
-            { key: 'first', title: 'Điểm đến' },
-            { key: 'second', title: 'Ẩm thực' },
-            { key: 'third', title: 'Mẹo' },
-        ],
-    };
-
-    render() {
-        return (
-
-                <TabView
-                    navigationState={this.state}
-                    renderScene={SceneMap({
-                        first: FirstRoute,
-                        second: SecondRoute,
-                        third: ThirdRoute,
-                    })}
-                    onIndexChange={index => this.setState({ index })}
-                    initialLayout={{ width: Dimensions.get('window').width }}
-                />
-        );
-    }
+  _renderTitleIndicator () {
+      return <PagerTitleIndicator titles={['Điểm đến', 'Ẩm thực', 'Mẹo']} style={{ height: 80, bottom:0,alignItems:'center'}}/>;
+  }
+  render () {
+    return (
+        <IndicatorViewPager
+            style={{ flex: 1, paddingTop: 20, backgroundColor: 'white' }}
+            indicator={this._renderTitleIndicator()}
+        >
+            <View style={{ backgroundColor: 'cadetblue' }}>
+                <Text>Điểm đến</Text>
+                {
+                    TourData.map((t, i) => (
+                        <ListItem
+                            key={i}
+                            leftAvatar={{ source: { uri: t.img } }}
+                            title={t.name}
+                            subtitle={t.doc}
+                            onPress={this.toggleShow}
+                        />
+                    ))
+                }
+            </View>
+            <View style={{ backgroundColor: 'cornflowerblue' }}>
+                <Text>Ẩm thực</Text>
+                {
+                    TourData.map((t, i) => (
+                        <ListItem
+                            key={i}
+                            leftAvatar={{ source: { uri: t.img } }}
+                            title={t.name}
+                            subtitle={t.doc}
+                            onPress={this.toggleShow}
+                        />
+                    ))
+                }
+            </View>
+            <View style={{ backgroundColor: '#1AA094' }}>
+                <Text>Mẹo</Text>
+                {
+                    TourData.map((t, i) => (
+                        <ListItem
+                            key={i}
+                            leftAvatar={{ source: { uri: t.img } }}
+                            title={t.name}
+                            subtitle={t.doc}
+                            onPress={this.toggleShow}
+                        />
+                    ))
+                }
+            </View>
+        </IndicatorViewPager>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-    scene: {
-        flex: 1,
-    },
+const styles = StyleSheet.create ({
+  scene: {
+    flex: 1,
+  },
 });
